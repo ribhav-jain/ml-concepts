@@ -1,0 +1,39 @@
+# Defines and runs multi-container Docker applications.
+# Version specifies the Compose file format version.
+version: "3.8"
+
+# Define the services (containers) that make up your application.
+services:
+  # Name of the service (can be anything, often 'web' or the app name)
+  web:
+    # Build context: Specifies the directory containing the Dockerfile.
+    # '.' means the current directory where docker-compose.yml resides.
+    build: .
+    # Port mapping: Maps port 5000 on the host machine to port 5000 in the container.
+    # Format: HOST_PORT:CONTAINER_PORT
+    # This allows you to access the Flask app via http://localhost:5000 on your machine.
+    ports:
+      - "5000:5000"
+    # Volume mapping: Mounts the current directory (.) on the host
+    # to /app inside the container.
+    # This is useful for development as changes made to your code locally
+    # will be reflected inside the container without rebuilding the image.
+    # For production, you might remove this or use named volumes.
+    volumes:
+      - .:/app
+    # Environment variables (optional, can override Dockerfile ENV)
+    # Example: Ensure Flask runs in development mode
+    environment:
+      - FLASK_ENV=development
+    # Command to override the default CMD in the Dockerfile (optional)
+    # command: python app.py # Example if you want to run it differently
+    networks:
+      - ainet
+
+# Optional: Define named volumes (not used in this basic example)
+# volumes:
+#   my-data-volume:
+
+networks:
+  ainet:
+    driver: bridge
