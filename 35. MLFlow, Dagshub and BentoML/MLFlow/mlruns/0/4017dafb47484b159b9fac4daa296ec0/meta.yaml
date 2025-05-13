@@ -1,0 +1,15 @@
+artifact_uri: file:///D:/Workspace/ml-concepts/35.%20MLFlow%2C%20Dagshub%20and%20BentoML/MLFlow/mlruns/0/4017dafb47484b159b9fac4daa296ec0/artifacts
+end_time: 1747154943706
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 4017dafb47484b159b9fac4daa296ec0
+run_name: rogue-sow-219
+run_uuid: 4017dafb47484b159b9fac4daa296ec0
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1747154937739
+status: 3
+tags: []
+user_id: Ribhav.jain
